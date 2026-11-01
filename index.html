@@ -2,127 +2,1870 @@
 <html lang="sv">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bröllop Johanna och Jonas, 13 februari 2027 på Carlshälls Gård.">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Bröllop mellan Johanna Ansker och Jonas Lundin den 13 februari 2027 på Carlshälls Gård."
+  >
+
   <title>Johanna & Jonas | 13 februari 2027</title>
 
   <style>
-    :root{
-      --forest:#18352e;
-      --forest2:#24483e;
-      --wine:#743c49;
-      --wine-dark:#522832;
-      --gold:#c9a66b;
-      --champagne:#ead9b8;
-      --snow:#f6f4ef;
-      --paper:#efe9df;
-      --ink:#23302b;
-      --muted:#6f756f;
-      --white:#fff;
+    :root {
+      --forest: #17362f;
+      --forest-light: #2e554b;
+      --wine: #743b49;
+      --wine-dark: #522832;
+      --gold: #c9a66b;
+      --champagne: #ead9b8;
+      --cream: #f4efe6;
+      --snow: #faf8f4;
+      --ink: #28342f;
+      --muted: #667069;
+      --white: #ffffff;
       --serif: Georgia, "Times New Roman", serif;
       --sans: Arial, Helvetica, sans-serif;
     }
 
-    *{
-      box-sizing:border-box;
+    * {
+      box-sizing: border-box;
     }
 
-    html{
-      scroll-behavior:smooth;
+    html {
+      scroll-behavior: smooth;
     }
 
-    body{
-      margin:0;
-      color:var(--ink);
-      background:var(--snow);
-      font-family:var(--serif);
-      line-height:1.65;
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--snow);
+      font-family: var(--serif);
+      line-height: 1.65;
     }
 
-    img{
-      max-width:100%;
+    body.menu-open {
+      overflow: hidden;
     }
 
-    h1,h2,h3,p{
-      margin-top:0;
+    img {
+      display: block;
+      width: 100%;
     }
 
-    h1,h2,h3{
-      font-weight:400;
-      line-height:1.08;
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
     }
 
-    a{
-      color:inherit;
+    h1,
+    h2,
+    h3 {
+      font-weight: 400;
+      line-height: 1.05;
     }
 
-    section{
-      position:relative;
+    a {
+      color: inherit;
     }
 
-    .eyebrow{
-      font-family:var(--sans);
-      font-size:.69rem;
-      font-weight:700;
-      line-height:1.3;
-      text-transform:uppercase;
-      letter-spacing:.28em;
-      color:var(--wine);
-      margin:0 0 1.15rem;
+    section {
+      position: relative;
     }
 
-    .eyebrow.light{
-      color:var(--champagne);
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--wine);
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-light {
+      color: var(--champagne);
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: -100px;
+      left: 20px;
+      padding: 12px 18px;
+      color: var(--white);
+      background: var(--wine);
+      font-family: var(--sans);
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 20px;
     }
 
     /* ==================================================
        NAVIGATION
        ================================================== */
 
-    .nav{
-      position:fixed;
-      z-index:100;
-      left:0;
-      right:0;
-      top:0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px clamp(20px,5vw,70px);
-      color:white;
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      left: 0;
       transition:
-        background .25s ease,
-        padding .25s ease,
-        box-shadow .25s ease;
+        background 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
-    .nav.scrolled{
-      background:rgba(24,53,46,.96);
-      padding-top:12px;
-      padding-bottom:12px;
-      box-shadow:0 8px 30px rgba(0,0,0,.12);
-      backdrop-filter:blur(8px);
+    .site-header.scrolled {
+      background: rgba(23, 54, 47, 0.96);
+      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(10px);
     }
 
-    .brand{
-      font-size:1.4rem;
-      text-decoration:none;
-      letter-spacing:.02em;
-      white-space:nowrap;
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(1440px, 100%);
+      min-height: 76px;
+      margin: auto;
+      padding: 0 clamp(20px, 5vw, 74px);
+      color: var(--white);
     }
 
-    .navlinks{
-      display:flex;
-      gap:32px;
-      align-items:center;
+    .brand {
+      font-size: 1.4rem;
+      letter-spacing: 0.03em;
+      text-decoration: none;
     }
 
-    .navlinks a{
-      font-family:var(--sans);
-      text-decoration:none;
-      text-transform:uppercase;
-      font-size:.67rem;
-      letter-spacing:.17em;
-      opacity:.94;
-      padding-bottom:4px;
-      border-bottom:1px solid 
+    .navigation-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3vw, 38px);
+    }
+
+    .navigation-links a {
+      border-bottom: 1px solid transparent;
+      padding: 7px 0;
+      font-family: var(--sans);
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .navigation-links a:hover,
+    .navigation-links a:focus-visible {
+      border-color: var(--champagne);
+    }
+
+    .navigation-links .navigation-rsvp {
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      padding: 10px 17px;
+    }
+
+    .navigation-links .navigation-rsvp:hover,
+    .navigation-links .navigation-rsvp:focus-visible {
+      color: var(--forest);
+      background: var(--white);
+      border-color: var(--white);
+    }
+
+    .menu-button {
+      display: none;
+      width: 46px;
+      height: 42px;
+      border: 0;
+      padding: 8px;
+      color: var(--white);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: 6px 0;
+      background: currentColor;
+      transition: transform 0.2s ease;
+    }
+
+    /* ==================================================
+       HERO
+       Bild 1: hero-winter.jpg
+       ================================================== */
+
+    .hero {
+      min-height: 100svh;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--forest);
+    }
+
+    .hero-image,
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-image {
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+    }
+
+    .hero-shade {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(9, 24, 20, 0.08) 5%,
+          rgba(9, 24, 20, 0.12) 40%,
+          rgba(9, 24, 20, 0.76) 100%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: min(1440px, 100%);
+      min-height: 100svh;
+      margin: auto;
+      padding:
+        150px
+        clamp(24px, 7vw, 105px)
+        clamp(65px, 8vw, 115px);
+    }
+
+    .hero-kicker {
+      margin-bottom: 18px;
+      color: var(--champagne);
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 1100px;
+      margin-bottom: 25px;
+      font-size: clamp(4rem, 10vw, 9.5rem);
+      letter-spacing: -0.055em;
+      text-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-information {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px 24px;
+      font-size: clamp(1.05rem, 2vw, 1.38rem);
+    }
+
+    .hero-separator {
+      width: 74px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      z-index: 3;
+      right: clamp(22px, 4vw, 65px);
+      bottom: 54px;
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+
+    /* ==================================================
+       INTRODUKTION
+       ================================================== */
+
+    .introduction {
+      overflow: hidden;
+      padding:
+        clamp(95px, 13vw, 185px)
+        clamp(24px, 8vw, 120px);
+      background:
+        radial-gradient(
+          circle at 88% 18%,
+          rgba(201, 166, 107, 0.16),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 6% 86%,
+          rgba(116, 59, 73, 0.09),
+          transparent 28%
+        ),
+        var(--snow);
+    }
+
+    .introduction-grid {
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      gap: clamp(45px, 9vw, 135px);
+      width: min(1160px, 100%);
+      margin: auto;
+    }
+
+    .large-date {
+      color: var(--wine);
+      font-size: clamp(5rem, 11vw, 9.5rem);
+      letter-spacing: -0.07em;
+      line-height: 0.76;
+      opacity: 0.15;
+    }
+
+    .introduction-copy {
+      max-width: 730px;
+    }
+
+    .introduction h2 {
+      margin-bottom: 38px;
+      color: var(--forest);
+      font-size: clamp(2.9rem, 6vw, 5.7rem);
+      letter-spacing: -0.04em;
+    }
+
+    .introduction-lead {
+      margin-bottom: 26px;
+      font-size: clamp(1.22rem, 2vw, 1.65rem);
+      line-height: 1.65;
+    }
+
+    .introduction-text {
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    /* ==================================================
+       PROGRAM
+       Bild 2: program-winter.jpg
+       Bilden är ett separat element och alltid synlig.
+       ================================================== */
+
+    .program {
+      color: var(--white);
+      background: var(--forest);
+    }
+
+    .program-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 56%) minmax(400px, 44%);
+      min-height: 860px;
+    }
+
+    .program-visual {
+      position: relative;
+      min-height: 860px;
+      overflow: hidden;
+    }
+
+    .program-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .program-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 65%,
+          rgba(23, 54, 47, 0.42) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.04),
+          rgba(0, 0, 0, 0.24)
+        );
+    }
+
+    .program-caption {
+      position: absolute;
+      z-index: 2;
+      right: clamp(25px, 5vw, 75px);
+      bottom: 50px;
+      left: clamp(25px, 5vw, 75px);
+      color: var(--white);
+      font-size: clamp(2.2rem, 4vw, 4.9rem);
+      font-style: italic;
+      line-height: 1.08;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .program-content {
+      display: flex;
+      align-items: center;
+      padding:
+        100px
+        clamp(35px, 6vw, 90px);
+      background:
+        linear-gradient(
+          145deg,
+          var(--forest),
+          #102a24
+        );
+    }
+
+    .program-content-inner {
+      width: min(520px, 100%);
+    }
+
+    .program h2 {
+      margin-bottom: 24px;
+      font-size: clamp(3.1rem, 5vw, 5.4rem);
+    }
+
+    .program-introduction {
+      margin-bottom: 50px;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 38px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 15px;
+      left: 4px;
+      width: 1px;
+      background:
+        linear-gradient(
+          var(--gold),
+          rgba(201, 166, 107, 0.08)
+        );
+    }
+
+    .event {
+      position: relative;
+      padding-bottom: 42px;
+    }
+
+    .event:last-child {
+      padding-bottom: 0;
+    }
+
+    .event::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -39px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid var(--champagne);
+      border-radius: 50%;
+      background: var(--forest);
+    }
+
+    .event-time {
+      margin-bottom: 5px;
+      color: var(--champagne);
+      font-family: var(--sans);
+      font-size: 0.66rem;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .event h3 {
+      margin-bottom: 8px;
+      font-size: 1.75rem;
+    }
+
+    .event p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ==================================================
+       CITAT
+       ================================================== */
+
+    .statement {
+      overflow: hidden;
+      padding:
+        clamp(90px, 13vw, 175px)
+        24px;
+      color: var(--white);
+      background: var(--wine-dark);
+      text-align: center;
+    }
+
+    .statement::before,
+    .statement::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(234, 217, 184, 0.13);
+      border-radius: 50%;
+    }
+
+    .statement::before {
+      top: -235px;
+      left: -100px;
+    }
+
+    .statement::after {
+      right: -120px;
+      bottom: -250px;
+    }
+
+    .statement p {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: auto;
+      font-size: clamp(2.8rem, 6vw, 6.4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .statement span {
+      display: block;
+      color: var(--champagne);
+      font-style: italic;
+    }
+
+    /* ==================================================
+       MIDDAG
+       Bild 3: dinner-winter.jpg
+       ================================================== */
+
+    .dinner {
+      min-height: 92svh;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--forest);
+    }
+
+    .dinner-image,
+    .dinner-shade {
+      position: absolute;
+      inset: 0;
+    }
+
+    .dinner-image {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .dinner-shade {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(10, 25, 21, 0.03) 15%,
+          rgba(10, 25, 21, 0.16) 48%,
+          rgba(10, 25, 21, 0.78) 100%
+        );
+    }
+
+    .dinner-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      width: min(1440px, 100%);
+      min-height: 92svh;
+      margin: auto;
+      padding:
+        120px
+        clamp(24px, 7vw, 105px)
+        clamp(70px, 9vw, 125px);
+    }
+
+    .dinner-copy {
+      max-width: 720px;
+    }
+
+    .dinner h2 {
+      margin-bottom: 24px;
+      font-size: clamp(3.2rem, 6.5vw, 6.5rem);
+      letter-spacing: -0.04em;
+    }
+
+    .dinner p {
+      max-width: 590px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.12rem;
+    }
+
+    /* ==================================================
+       PRAKTISK INFORMATION
+       ================================================== */
+
+    .information {
+      overflow: hidden;
+      padding:
+        clamp(100px, 13vw, 180px)
+        clamp(24px, 7vw, 105px);
+      background:
+        linear-gradient(
+          125deg,
+          var(--cream),
+          var(--snow) 50%,
+          #e6ebe5
+        );
+    }
+
+    .information-inner {
+      width: min(1200px, 100%);
+      margin: auto;
+    }
+
+    .information-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 72px;
+    }
+
+    .information h2 {
+      margin-bottom: 0;
+      color: var(--forest);
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    .information-summary {
+      max-width: 510px;
+      margin-bottom: 7px;
+      color: var(--muted);
+    }
+
+    .information-list {
+      border-top: 1px solid rgba(23, 54, 47, 0.24);
+    }
+
+    .information-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.55fr) 1.45fr;
+      gap: 65px;
+      padding: 45px 0;
+      border-bottom: 1px solid rgba(23, 54, 47, 0.16);
+    }
+
+    .information-row h3 {
+      margin: 0;
+      color: var(--wine);
+      font-size: 1.55rem;
+    }
+
+    .information-row div {
+      max-width: 680px;
+      color: #4f5b54;
+    }
+
+    .information-row p {
+      margin-bottom: 0;
+    }
+
+    .information-row p + p {
+      margin-top: 13px;
+    }
+
+    /* ==================================================
+       OSA
+       Bild 4: rsvp-winter.jpg
+       Bilden tar alltid minst 52 procent av bredden.
+       ================================================== */
+
+    .rsvp {
+      background: var(--forest);
+    }
+
+    .rsvp-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 54%) minmax(420px, 46%);
+      min-height: 960px;
+    }
+
+    .rsvp-visual {
+      position: relative;
+      min-height: 960px;
+      overflow: hidden;
+    }
+
+    .rsvp-image {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .rsvp-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(10, 25, 21, 0.02),
+          rgba(10, 25, 21, 0.22)
+        );
+    }
+
+    .rsvp-image-text {
+      position: absolute;
+      z-index: 2;
+      right: clamp(25px, 5vw, 75px);
+      bottom: 60px;
+      left: clamp(25px, 5vw, 75px);
+      color: var(--white);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .rsvp-image-text strong {
+      display: block;
+      max-width: 560px;
+      color: var(--white);
+      font-size: clamp(2.7rem, 5vw, 5.7rem);
+      font-weight: 400;
+      line-height: 1.07;
+    }
+
+    .rsvp-form-column {
+      display: flex;
+      align-items: center;
+      background: var(--snow);
+    }
+
+    .rsvp-form-inner {
+      width: min(620px, 100%);
+      margin: auto;
+      padding:
+        95px
+        clamp(35px, 6vw, 85px);
+    }
+
+    .rsvp h2 {
+      margin-bottom: 17px;
+      color: var(--forest);
+      font-size: clamp(3.3rem, 5vw, 5.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    .deadline {
+      margin-bottom: 44px;
+      color: var(--wine);
+      font-style: italic;
+    }
+
+    .form-field {
+      margin-bottom: 25px;
+    }
+
+    label,
+    .field-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--forest);
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #9b9b90;
+      border-radius: 0;
+      padding: 11px 2px;
+      color: var(--ink);
+      background: transparent;
+      font: 1rem var(--serif);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--wine);
+      outline: 2px solid transparent;
+    }
+
+    textarea {
+      min-height: 92px;
+      resize: vertical;
+    }
+
+    .attendance-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 25px;
+      padding-top: 5px;
+    }
+
+    .attendance-options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .attendance-options input {
+      width: auto;
+    }
+
+    .submit-button {
+      width: 100%;
+      border: 0;
+      margin-top: 14px;
+      padding: 17px 24px;
+      color: var(--white);
+      background: var(--forest);
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 0.69rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .submit-button:hover,
+    .submit-button:focus-visible {
+      background: var(--wine);
+      transform: translateY(-1px);
+    }
+
+    /* ==================================================
+       SIDFOT
+       ================================================== */
+
+    .footer {
+      overflow: hidden;
+      padding: 90px 24px;
+      color: var(--white);
+      background: #102a24;
+      text-align: center;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 580px;
+      height: 580px;
+      border: 1px solid rgba(234, 217, 184, 0.08);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-names {
+      margin-bottom: 17px;
+      color: var(--champagne);
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: 1.1;
+    }
+
+    .footer-heart {
+      margin: 20px 0;
+      color: var(--gold);
+      font-size: 1.4rem;
+    }
+
+    .footer-date {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ==================================================
+       BILDTEST
+       Visas bara om en bild saknas eller inte kan laddas.
+       ================================================== */
+
+    .image-error {
+      display: grid;
+      position: absolute;
+      z-index: 20;
+      inset: 0;
+      place-items: center;
+      padding: 30px;
+      color: var(--white);
+      background: var(--wine-dark);
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    /* ==================================================
+       MOBIL
+       ================================================== */
+
+    @media (max-width: 950px) {
+      .program-layout,
+      .rsvp-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .program-visual {
+        min-height: 68svh;
+      }
+
+      .program-content {
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+
+      .program-content-inner {
+        width: min(680px, 100%);
+        margin: auto;
+      }
+
+      .rsvp-visual {
+        min-height: 72svh;
+      }
+
+      .rsvp-form-column {
+        min-height: auto;
+      }
+
+      .rsvp-form-inner {
+        width: min(720px, 100%);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-button {
+        display: block;
+      }
+
+      .navigation-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: min(330px, 88vw);
+        padding: 80px 45px;
+        color: var(--white);
+        background: var(--forest);
+        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.25);
+      }
+
+      .navigation-links.open {
+        display: flex;
+      }
+
+      .navigation-links a {
+        width: 100%;
+        font-size: 0.75rem;
+      }
+
+      .navigation-links .navigation-rsvp {
+        width: auto;
+      }
+
+      .menu-button {
+        position: relative;
+        z-index: 2;
+      }
+
+      .introduction-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .large-date {
+        font-size: 5.5rem;
+      }
+
+      .information-heading {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .information-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 36px 0;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        min-height: 88svh;
+      }
+
+      .hero-content {
+        min-height: 88svh;
+        padding-bottom: 62px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.5rem, 17vw, 5.5rem);
+      }
+
+      .hero-information {
+        display: block;
+      }
+
+      .hero-separator {
+        margin: 13px 0;
+      }
+
+      .program-visual,
+      .rsvp-visual {
+        min-height: 58svh;
+      }
+
+      .attendance-options {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .statement span {
+        margin-top: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">
+    Hoppa till innehållet
+  </a>
+
+  <!-- Navigation -->
+
+  <header class="site-header" id="site-header">
+
+    <nav class="navigation" aria-label="Huvudmeny">
+
+      <a class="brand" href="#top">
+        J &amp; J
+      </a>
+
+      <button
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-label="Öppna meny"
+        aria-expanded="false"
+        aria-controls="navigation-links"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="navigation-links" id="navigation-links">
+
+        <a href="#welcome">
+          Välkommen
+        </a>
+
+        <a href="#program">
+          Program
+        </a>
+
+        <a href="#information">
+          Information
+        </a>
+
+        <a class="navigation-rsvp" href="#osa">
+          OSA
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- ==================================================
+         BILD 1
+         hero-winter.jpg
+         ================================================== -->
+
+    <section class="hero" id="top">
+
+      <img
+        class="hero-image monitored-image"
+        src="hero-winter.jpg"
+        alt=""
+        fetchpriority="high"
+      >
+
+      <div class="hero-shade"></div>
+
+      <div class="hero-content">
+
+        <div class="hero-kicker">
+          Vi ska gifta oss
+        </div>
+
+        <h1>
+          Johanna<br>
+          &amp; Jonas
+        </h1>
+
+        <div class="hero-information">
+
+          <span>
+            13 februari 2027
+          </span>
+
+          <span class="hero-separator"></span>
+
+          <span>
+            Carlshälls Gård
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        Scrolla för att upptäcka
+      </div>
+
+    </section>
+
+
+    <!-- Introduktion -->
+
+    <section class="introduction" id="welcome">
+
+      <div class="introduction-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Välkommen till vårt bröllop
+          </div>
+
+          <div class="large-date" aria-hidden="true">
+            13<br>02
+          </div>
+
+        </div>
+
+        <div class="introduction-copy">
+
+          <h2>
+            En vinterdag<br>
+            vi vill dela med er.
+          </h2>
+
+          <p class="introduction-lead">
+            Efter sex år tillsammans ser vi fram emot att fira vår
+            kärlek och vårt fortsatta liv tillsammans med familj
+            och vänner.
+          </p>
+
+          <p class="introduction-text">
+            Lördagen den 13 februari 2027 samlas vi på Carlshälls
+            Gård på Långholmen. Vår förhoppning är en vacker
+            vinterdag och, om vädret tillåter, en vigsel utomhus.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         BILD 2
+         program-winter.jpg
+         ================================================== -->
+
+    <section class="program" id="program">
+
+      <div class="program-layout">
+
+        <div class="program-visual">
+
+          <img
+            class="program-image monitored-image"
+            src="program-winter.jpg"
+            alt=""
+            loading="lazy"
+          >
+
+          <div class="program-caption">
+            En dag att<br>
+            minnas tillsammans.
+          </div>
+
+        </div>
+
+
+        <div class="program-content">
+
+          <div class="program-content-inner">
+
+            <div class="eyebrow eyebrow-light">
+              13 februari
+            </div>
+
+            <h2>
+              Dagens program
+            </h2>
+
+            <p class="program-introduction">
+              En eftermiddag och kväll för vigsel, middag och fest.
+              Tiderna är preliminära och uppdateras när den slutliga
+              planeringen är klar.
+            </p>
+
+
+            <div class="timeline">
+
+              <article class="event">
+
+                <div class="event-time">
+                  14.00
+                </div>
+
+                <h3>
+                  Ankomst
+                </h3>
+
+                <p>
+                  Välkomstservering och samling på Carlshälls Gård.
+                  Kom gärna i god tid.
+                </p>
+
+              </article>
+
+
+              <article class="event">
+
+                <div class="event-time">
+                  15.00
+                </div>
+
+                <h3>
+                  Vigsel
+                </h3>
+
+                <p>
+                  Om februari visar sig från sin bästa sida hoppas
+                  vi kunna hålla vigseln utomhus.
+                </p>
+
+              </article>
+
+
+              <article class="event">
+
+                <div class="event-time">
+                  Därefter
+                </div>
+
+                <h3>
+                  Middag och fest
+                </h3>
+
+                <p>
+                  Vi fortsätter kvällen tillsammans med middag,
+                  tal, musik och fest.
+                </p>
+
+              </article>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Citat -->
+
+    <section class="statement">
+
+      <p>
+        Samma äventyr,
+        <span>resten av livet.</span>
+      </p>
+
+    </section>
+
+
+    <!-- ==================================================
+         BILD 3
+         dinner-winter.jpg
+         ================================================== -->
+
+    <section class="dinner">
+
+      <img
+        class="dinner-image monitored-image"
+        src="dinner-winter.jpg"
+        alt=""
+        loading="lazy"
+      >
+
+      <div class="dinner-shade"></div>
+
+      <div class="dinner-content">
+
+        <div class="dinner-copy">
+
+          <div class="eyebrow eyebrow-light">
+            När mörkret faller
+          </div>
+
+          <h2>
+            Middag,<br>
+            värme och fest
+          </h2>
+
+          <p>
+            Efter vigseln går vi in i värmen på Carlshälls Gård
+            för middag och en kväll tillsammans med människorna
+            som betyder mest för oss.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Praktisk information -->
+
+    <section class="information" id="information">
+
+      <div class="information-inner">
+
+        <div class="information-heading">
+
+          <div>
+
+            <div class="eyebrow">
+              Bra att veta
+            </div>
+
+            <h2>
+              Inför<br>
+              dagen
+            </h2>
+
+          </div>
+
+          <p class="information-summary">
+            Här samlar vi information inför bröllopet. Sidan
+            uppdateras löpande när vi närmar oss den 13 februari.
+          </p>
+
+        </div>
+
+
+        <div class="information-list">
+
+          <article class="information-row">
+
+            <h3>
+              Plats
+            </h3>
+
+            <div>
+
+              <p>
+                <strong>
+                  Carlshälls Gård, Långholmen, Stockholm.
+                </strong>
+              </p>
+
+              <p>
+                Mer information om transport, parkering och
+                eventuell gemensam transport kommer här.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="information-row">
+
+            <h3>
+              Vigsel
+            </h3>
+
+            <div>
+
+              <p>
+                Vår förhoppning är att vigseln ska hållas utomhus.
+                Vid olämpligt väder genomförs vigseln i stället
+                inomhus.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="information-row">
+
+            <h3>
+              Klädsel
+            </h3>
+
+            <div>
+
+              <p>
+                Klädkod meddelas här. Eftersom vigseln kan vara
+                utomhus rekommenderar vi varma ytterkläder och
+                skor som fungerar i vinterväder.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="information-row">
+
+            <h3>
+              Mat och dryck
+            </h3>
+
+            <div>
+
+              <p>
+                Middag med tillhörande dryck serveras under kvällen.
+                Allergier och behov av specialkost anger ni när
+                ni svarar nedan.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="information-row">
+
+            <h3>
+              Barn
+            </h3>
+
+            <div>
+
+              <p>
+                Information om barn och vilka delar av dagen som
+                gäller för dem kommer att uppdateras här.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="information-row">
+
+            <h3>
+              Övernattning
+            </h3>
+
+            <div>
+
+              <p>
+                Information och eventuella rekommendationer kring
+                boende i Stockholm kommer här.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         BILD 4
+         rsvp-winter.jpg
+         ================================================== -->
+
+    <section class="rsvp" id="osa">
+
+      <div class="rsvp-layout">
+
+        <div class="rsvp-visual">
+
+          <img
+            class="rsvp-image monitored-image"
+            src="rsvp-winter.jpg"
+            alt=""
+            loading="lazy"
+          >
+
+          <div class="rsvp-image-text">
+
+            <div class="eyebrow eyebrow-light">
+              Vi hoppas att ni kan komma
+            </div>
+
+            <strong>
+              Fira dagen<br>
+              tillsammans med oss.
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="rsvp-form-column">
+
+          <div class="rsvp-form-inner">
+
+            <div class="eyebrow">
+              Svara gärna
+            </div>
+
+            <h2>
+              OSA
+            </h2>
+
+            <p class="deadline">
+              Vi önskar ert svar senast den 6 december 2026.
+            </p>
+
+
+            <!--
+              VIKTIGT:
+              Byt DIN_FORM_ID mot ditt riktiga Formspree-ID.
+
+              Exempel:
+              action="https://formspree.io/f/abcdefgh"
+            -->
+
+            <form
+              action="https://formspree.io/f/DIN_FORM_ID"
+              method="POST"
+            >
+
+              <div class="form-field">
+
+                <label for="name">
+                  Namn
+                </label>
+
+                <input
+                  id="name"
+                  name="Namn"
+                  type="text"
+                  autocomplete="name"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-field">
+
+                <div class="field-label">
+                  Kan ni komma?
+                </div>
+
+                <div class="attendance-options">
+
+                  <label>
+
+                    <input
+                      type="radio"
+                      name="Närvaro"
+                      value="Ja"
+                      required
+                    >
+
+                    Ja, vi kommer
+
+                  </label>
+
+
+                  <label>
+
+                    <input
+                      type="radio"
+                      name="Närvaro"
+                      value="Nej"
+                    >
+
+                    Nej, tyvärr
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="guests">
+                  Antal personer
+                </label>
+
+                <select
+                  id="guests"
+                  name="Antal personer"
+                  required
+                >
+
+                  <option value="">
+                    Välj antal
+                  </option>
+
+                  <option value="1">
+                    1 person
+                  </option>
+
+                  <option value="2">
+                    2 personer
+                  </option>
+
+                  <option value="3">
+                    3 personer
+                  </option>
+
+                  <option value="4">
+                    4 personer
+                  </option>
+
+                  <option value="5">
+                    5 personer
+                  </option>
+
+                  <option value="6">
+                    6 personer
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="diet">
+                  Allergier eller specialkost
+                </label>
+
+                <textarea
+                  id="diet"
+                  name="Specialkost"
+                  placeholder="Ange allergier eller behov av specialkost"
+                ></textarea>
+
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="message">
+                  Meddelande till oss
+                </label>
+
+                <textarea
+                  id="message"
+                  name="Meddelande"
+                  placeholder="Skriv gärna ett meddelande"
+                ></textarea>
+
+              </div>
+
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="Ny OSA – Johanna och Jonas"
+              >
+
+
+              <button
+                class="submit-button"
+                type="submit"
+              >
+                Skicka OSA
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-names">
+        Johanna &amp; Jonas
+      </div>
+
+      <div class="footer-heart">
+        ♡
+      </div>
+
+      <div class="footer-date">
+        13 februari 2027 · Carlshälls Gård
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    const siteHeader = document.getElementById("site-header");
+    const menuButton = document.getElementById("menu-button");
+    const navigationLinks = document.getElementById("navigation-links");
+    const navigationItems = navigationLinks.querySelectorAll("a");
+
+    function updateHeader() {
+      siteHeader.classList.toggle("scrolled", window.scrollY > 40);
+    }
+
+    function closeMenu() {
+      navigationLinks.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Öppna meny");
+    }
+
+    menuButton.addEventListener("click", function () {
+      const menuIsOpen = navigationLinks.classList.toggle("open");
+
+      document.body.classList.toggle("menu-open", menuIsOpen);
+      menuButton.setAttribute("aria-expanded", String(menuIsOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        menuIsOpen ? "Stäng meny" : "Öppna meny"
+      );
+    });
+
+    navigationItems.forEach(function (item) {
+      item.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("scroll", updateHeader, {
+      passive: true
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 760) {
+        closeMenu();
+      }
+    });
+
+    updateHeader();
+
+    /*
+      Visar ett tydligt felmeddelande om någon av de fyra
+      bildfilerna saknas eller har fel filnamn.
+    */
+
+    document
+      .querySelectorAll(".monitored-image")
+      .forEach(function (image) {
+        image.addEventListener("error", function () {
+          const errorMessage = document.createElement("div");
+
+          errorMessage.className = "image-error";
+          errorMessage.textContent =
+            "Bilden kunde inte laddas: " +
+            image.getAttribute("src");
+
+          image.parentElement.appendChild(errorMessage);
+        });
+      });
+  </script>
+
+</body>
+</html>
