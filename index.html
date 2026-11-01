@@ -3,1543 +3,875 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Johanna & Jonas | 13 februari 2027</title>
-  <meta
-    name="description"
-    content="Information och OSA för Johanna Anskers och Jonas Lundins bröllop på Carlshälls Gård den 13 februari 2027."
-  >
 
   <style>
     :root {
-      --cream: #f4efe5;
-      --paper: #fffdf8;
-      --paper-warm: #faf6ee;
-      --green: #2f443a;
-      --green-dark: #21342c;
-      --green-light: #718178;
-      --sage: #a9b5ad;
-      --gold: #aa854d;
-      --gold-light: #d8c39e;
-      --burgundy: #743f42;
-      --berry: #874a4d;
-      --text: #2f342f;
-      --muted: #69716b;
-      --border: rgba(170, 133, 77, 0.42);
-      --shadow: 0 22px 60px rgba(30, 51, 42, 0.13);
-      --shadow-soft: 0 12px 35px rgba(30, 51, 42, 0.08);
+      --green: #263c34;
+      --green-dark: #172a24;
+      --burgundy: #722f37;
+      --gold: #c7a56c;
+      --champagne: #e8d9bb;
+      --cream: #f7f2e9;
+      --paper: #fbf8f2;
+      --blue: #71828b;
+      --text: #2d332f;
+      --white: #fff;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
     }
 
     body {
       margin: 0;
+      background: var(--paper);
       color: var(--text);
-      background:
-        radial-gradient(circle at 12% 10%, rgba(116, 63, 66, 0.07), transparent 24rem),
-        radial-gradient(circle at 90% 30%, rgba(47, 68, 58, 0.07), transparent 28rem),
-        var(--cream);
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.7;
-      overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-    }
-
-    strong {
-      color: var(--green);
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-    }
-
-    .skip-link:focus {
-      left: 1rem;
-      top: 1rem;
-      z-index: 1000;
-      padding: 0.75rem 1rem;
-      color: var(--green);
-      background: white;
-      border: 1px solid var(--gold);
-    }
-
-    /* Dekorativa vinterelement */
-
-    .snow-layer {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .snow-layer span {
-      position: absolute;
-      display: block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.72);
-      box-shadow: 0 0 7px rgba(255, 255, 255, 0.7);
-      animation: drift 16s linear infinite;
-    }
-
-    .snow-layer span:nth-child(1) {
-      left: 8%;
-      top: -2%;
-      animation-delay: 0s;
-    }
-
-    .snow-layer span:nth-child(2) {
-      left: 18%;
-      top: 17%;
-      width: 3px;
-      height: 3px;
-      animation-delay: -5s;
-    }
-
-    .snow-layer span:nth-child(3) {
-      left: 31%;
-      top: 3%;
-      width: 7px;
-      height: 7px;
-      animation-delay: -8s;
-    }
-
-    .snow-layer span:nth-child(4) {
-      left: 45%;
-      top: 21%;
-      width: 4px;
-      height: 4px;
-      animation-delay: -12s;
-    }
-
-    .snow-layer span:nth-child(5) {
-      left: 58%;
-      top: 8%;
-      width: 3px;
-      height: 3px;
-      animation-delay: -2s;
-    }
-
-    .snow-layer span:nth-child(6) {
-      left: 73%;
-      top: 15%;
-      width: 6px;
-      height: 6px;
-      animation-delay: -10s;
-    }
-
-    .snow-layer span:nth-child(7) {
-      left: 86%;
-      top: 4%;
-      width: 4px;
-      height: 4px;
-      animation-delay: -7s;
-    }
-
-    .snow-layer span:nth-child(8) {
-      left: 94%;
-      top: 25%;
-      width: 7px;
-      height: 7px;
-      animation-delay: -14s;
-    }
-
-    @keyframes drift {
-      0% {
-        transform: translate3d(0, -40px, 0);
-        opacity: 0;
-      }
-
-      12% {
-        opacity: 0.8;
-      }
-
-      88% {
-        opacity: 0.55;
-      }
-
-      100% {
-        transform: translate3d(35px, 720px, 0);
-        opacity: 0;
-      }
-    }
-
-    .botanical {
-      position: absolute;
-      z-index: 3;
-      width: 290px;
-      height: 290px;
-      pointer-events: none;
-      filter: drop-shadow(0 12px 18px rgba(30, 50, 40, 0.08));
-    }
-
-    .botanical-top-left {
-      top: -42px;
-      left: -42px;
-      transform: rotate(-8deg);
-    }
-
-    .botanical-top-right {
-      top: -38px;
-      right: -50px;
-      transform: scaleX(-1) rotate(-4deg);
-    }
-
-    .branch {
-      position: absolute;
-      width: 210px;
-      height: 5px;
-      border-radius: 50%;
-      background: #566b5e;
-      transform: rotate(43deg);
-      transform-origin: left center;
-    }
-
-    .branch::before,
-    .branch::after {
-      content: "";
-      position: absolute;
-      width: 95px;
-      height: 30px;
-      border-radius: 100% 0 100% 0;
-      border-top: 7px solid #3f5c4b;
-      opacity: 0.95;
-    }
-
-    .branch::before {
-      top: -24px;
-      left: 35px;
-      transform: rotate(-25deg);
-    }
-
-    .branch::after {
-      top: 4px;
-      left: 79px;
-      transform: rotate(25deg) scaleX(-1);
-    }
-
-    .branch-one {
-      top: 34px;
-      left: 12px;
-    }
-
-    .branch-two {
-      top: 78px;
-      left: 2px;
-      width: 185px;
-      transform: rotate(24deg);
-      opacity: 0.82;
-    }
-
-    .leaf {
-      position: absolute;
-      width: 37px;
-      height: 63px;
-      border-radius: 70% 0 70% 0;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.18), transparent 45%),
-        #74877b;
-      border: 1px solid rgba(47, 68, 58, 0.16);
-    }
-
-    .leaf-one {
-      top: 53px;
-      left: 125px;
-      transform: rotate(22deg);
-    }
-
-    .leaf-two {
-      top: 86px;
-      left: 164px;
-      transform: rotate(61deg) scale(0.88);
-    }
-
-    .leaf-three {
-      top: 17px;
-      left: 169px;
-      transform: rotate(87deg) scale(0.78);
-    }
-
-    .leaf-four {
-      top: 94px;
-      left: 84px;
-      transform: rotate(-10deg) scale(0.72);
-    }
-
-    .berry {
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 35% 28%, #b97879 0 10%, #87474a 30%, #5f3033 100%);
-      box-shadow:
-        18px 8px 0 #7d3e42,
-        7px 24px 0 #934f52,
-        27px 29px 0 #6e373a,
-        43px 17px 0 #8a4649;
-    }
-
-    .berry-cluster {
-      top: 111px;
-      left: 45px;
-    }
-
-    /* Hero */
-
-    .hero {
-      position: relative;
-      min-height: 94vh;
-      display: grid;
-      place-items: center;
-      padding: 4rem 1.25rem 7rem;
-      overflow: hidden;
-      isolation: isolate;
-      background:
-        linear-gradient(to bottom, rgba(221, 226, 221, 0.20), rgba(244, 239, 229, 0.78)),
-        radial-gradient(circle at 50% 20%, rgba(255, 247, 229, 0.96), transparent 24rem),
-        linear-gradient(135deg, #b9c6bf 0%, #dbe1dc 25%, #f1e2d1 58%, #bec9c4 100%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: auto -5% 0;
-      height: 33%;
-      background:
-        radial-gradient(ellipse at 8% 100%, #cbd5d0 0 25%, transparent 26%),
-        radial-gradient(ellipse at 30% 100%, #d8dfdb 0 32%, transparent 33%),
-        radial-gradient(ellipse at 58% 100%, #c4d0ca 0 39%, transparent 40%),
-        radial-gradient(ellipse at 85% 100%, #d6ded9 0 31%, transparent 32%),
-        linear-gradient(to top, #edf0ec 0 42%, transparent 43%);
-      opacity: 0.95;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      left: 50%;
-      bottom: 10%;
-      width: 72%;
-      height: 24%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.42);
-      filter: blur(24px);
-    }
-
-    .hero-card {
-      position: relative;
-      z-index: 4;
-      width: min(840px, 100%);
-      padding: clamp(3.5rem, 8vw, 6.6rem) clamp(1.4rem, 7vw, 5.5rem);
-      text-align: center;
-      border: 1px solid rgba(170, 133, 77, 0.75);
-      background:
-        linear-gradient(rgba(255, 253, 248, 0.93), rgba(255, 253, 248, 0.87)),
-        var(--paper);
-      box-shadow:
-        0 28px 80px rgba(31, 51, 43, 0.20),
-        inset 0 0 60px rgba(170, 133, 77, 0.04);
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid rgba(170, 133, 77, 0.28);
-      pointer-events: none;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -21px;
-      width: 42px;
-      height: 42px;
-      transform: translateX(-50%) rotate(45deg);
-      border-right: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-      background: var(--paper);
-    }
-
-    .eyebrow {
-      margin: 0 0 1.35rem;
-      color: var(--green-light);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.42em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      color: var(--green);
-      font-size: clamp(2.65rem, 8vw, 5.7rem);
-      font-weight: 400;
-      line-height: 1.04;
-      letter-spacing: 0.025em;
-      text-shadow: 0 2px 1px rgba(255, 255, 255, 0.8);
-    }
-
-    .ampersand {
-      display: block;
-      margin: 0.3rem 0 0.5rem;
-      color: var(--gold);
-      font-size: 0.76em;
-      font-style: italic;
-      line-height: 1;
-    }
-
-    .hero-date {
-      margin: 2.2rem 0 0.45rem;
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(0.83rem, 2vw, 1.02rem);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .hero-place {
-      margin: 0;
-      color: var(--burgundy);
-      font-size: clamp(1.1rem, 3vw, 1.35rem);
-      font-style: italic;
-    }
-
-    .winter-mark {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      width: min(260px, 75%);
-      margin: 2rem auto 0;
-      color: var(--gold);
-      font-size: 1.35rem;
-    }
-
-    .winter-mark::before,
-    .winter-mark::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold));
-    }
-
-    .winter-mark::after {
-      background: linear-gradient(to left, transparent, var(--gold));
-    }
-
-    /* Navigation */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(216, 195, 158, 0.3);
-      background: rgba(33, 52, 44, 0.95);
-      box-shadow: 0 7px 25px rgba(25, 42, 35, 0.18);
-      backdrop-filter: blur(10px);
-    }
-
-    .nav-inner {
-      max-width: 1080px;
-      margin: auto;
-      padding: 0.9rem 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.7rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      position: relative;
-      color: #fffdf8;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.74rem;
-      letter-spacing: 0.12em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      right: 50%;
-      bottom: -0.42rem;
-      left: 50%;
-      height: 1px;
-      background: var(--gold-light);
-      transition: left 0.2s ease, right 0.2s ease;
-    }
-
-    nav a:hover::after,
-    nav a:focus::after {
-      right: 0;
-      left: 0;
-    }
-
-    /* Generella sektioner */
-
-    main {
-      position: relative;
-      z-index: 2;
-    }
-
-    .section {
-      position: relative;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 6rem 1.4rem;
-    }
-
-    .section-title {
-      margin: 0 0 0.75rem;
-      color: var(--green);
-      text-align: center;
-      font-size: clamp(2.1rem, 5vw, 3.45rem);
+    h1, h2, h3 {
       font-weight: 400;
       line-height: 1.15;
     }
 
-    .section-title::before {
-      content: "❦";
-      display: block;
-      margin-bottom: 0.65rem;
-      color: var(--gold);
-      font-size: 1.1rem;
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--green);
+      margin-bottom: 1.6rem;
     }
 
-    .section-intro {
-      max-width: 700px;
-      margin: 0 auto 3.25rem;
-      color: var(--muted);
-      text-align: center;
-      font-size: 1.05rem;
-      font-style: italic;
+    p {
+      margin-bottom: 1rem;
     }
 
-    .divider {
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .28em;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--burgundy);
+      margin-bottom: 1rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 94vh;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(15,30,26,.20),
+          rgba(15,30,26,.48)
+        ),
+        url("hero-winter.jpg") center center / cover no-repeat;
+
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      width: 180px;
-      margin: 1.1rem auto 2.2rem;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      padding: 40px 20px;
     }
 
-    .divider::before,
-    .divider::after {
-      content: "";
-      flex: 1;
+    .hero-content {
+      max-width: 900px;
+      text-shadow: 0 3px 15px rgba(0,0,0,.35);
+    }
+
+    .hero-small {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .30em;
+      font-size: .8rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.8rem, 9vw, 7.8rem);
+      letter-spacing: -.025em;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-date {
+      font-size: clamp(1rem,2vw,1.35rem);
+      letter-spacing: .11em;
+      margin-bottom: .4rem;
+    }
+
+    .hero-place {
+      font-style: italic;
+      font-size: 1.3rem;
+    }
+
+    .hero-symbol {
+      color: var(--champagne);
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* NAV */
+
+    nav {
+      background: rgba(247,242,233,.96);
+      border-bottom: 1px solid rgba(199,165,108,.45);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      text-align: center;
+      padding: 16px 10px;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: var(--green);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+      font-size: .72rem;
+      letter-spacing: .15em;
+      margin: 0 17px;
+    }
+
+    nav a:hover {
+      color: var(--burgundy);
+    }
+
+    /* INTRO */
+
+    .intro {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(199,165,108,.14), transparent 30%),
+        var(--cream);
+      padding: 110px 24px;
+      text-align: center;
+    }
+
+    .intro-inner {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .intro p {
+      font-size: 1.16rem;
+    }
+
+    .ornament {
+      width: 90px;
       height: 1px;
       background: var(--gold);
+      margin: 35px auto;
     }
 
-    .divider::after {
-      box-shadow: none;
+    /* PROGRAM */
+
+    .program {
+      background:
+        linear-gradient(
+          rgba(19,35,30,.75),
+          rgba(19,35,30,.82)
+        ),
+        url("program-winter.jpg") center / cover no-repeat;
+
+      background-attachment: fixed;
+      color: white;
+      padding: 120px 24px;
     }
 
-    .welcome {
-      position: relative;
+    .program-inner {
       max-width: 820px;
       margin: auto;
-      padding: clamp(2.2rem, 5vw, 4rem);
-      border: 1px solid rgba(170, 133, 77, 0.35);
-      background:
-        linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(248, 243, 234, 0.88));
-      box-shadow: var(--shadow-soft);
-      text-align: center;
-      font-size: 1.15rem;
     }
 
-    .welcome::before,
-    .welcome::after {
-      content: "";
-      position: absolute;
-      width: 60px;
-      height: 60px;
+    .program h2 {
+      color: white;
     }
 
-    .welcome::before {
-      top: 13px;
-      left: 13px;
-      border-top: 1px solid var(--gold);
+    .program .eyebrow {
+      color: var(--champagne);
+    }
+
+    .program-intro {
+      margin-bottom: 55px;
+      max-width: 650px;
+      font-size: 1.05rem;
+    }
+
+    .timeline {
       border-left: 1px solid var(--gold);
+      margin-left: 15px;
     }
 
-    .welcome::after {
-      right: 13px;
-      bottom: 13px;
-      border-right: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-    }
-
-    .welcome p:first-child::first-letter {
-      float: left;
-      margin: 0.11em 0.12em 0 0;
-      color: var(--burgundy);
-      font-size: 3.8rem;
-      line-height: 0.8;
-    }
-
-    /* Program */
-
-    #program {
-      max-width: none;
-      padding-right: max(1.4rem, calc((100% - 1092px) / 2));
-      padding-left: max(1.4rem, calc((100% - 1092px) / 2));
-      background:
-        linear-gradient(rgba(39, 60, 50, 0.93), rgba(39, 60, 50, 0.96)),
-        radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.18), transparent 20rem);
-      color: #f8f4eb;
-    }
-
-    #program .section-title {
-      color: #fffdf8;
-    }
-
-    #program .section-intro {
-      color: #dce3de;
-    }
-
-    #program .section-title::before {
-      color: var(--gold-light);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
-    }
-
-    .card {
+    .event {
+      padding: 0 0 55px 45px;
       position: relative;
-      min-height: 285px;
-      padding: 2.3rem 2rem;
-      overflow: hidden;
-      border: 1px solid rgba(216, 195, 158, 0.55);
-      background:
-        linear-gradient(145deg, rgba(255, 253, 248, 0.98), rgba(244, 239, 229, 0.93));
-      box-shadow: 0 18px 45px rgba(13, 29, 22, 0.22);
-      color: var(--text);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 55px rgba(13, 29, 22, 0.28);
+    .event:last-child {
+      padding-bottom: 15px;
     }
 
-    .card::before {
+    .event:before {
       content: "";
       position: absolute;
-      top: -38px;
-      right: -38px;
-      width: 110px;
-      height: 110px;
-      border: 1px solid var(--gold-light);
+      left: -6px;
+      top: 7px;
+      width: 11px;
+      height: 11px;
+      background: var(--gold);
       border-radius: 50%;
-      opacity: 0.45;
-    }
-
-    .card::after {
-      content: "❦";
-      position: absolute;
-      right: 1.25rem;
-      bottom: 0.8rem;
-      color: rgba(170, 133, 77, 0.35);
-      font-size: 2rem;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-      color: var(--green);
-      font-size: 1.55rem;
-      font-weight: 400;
     }
 
     .time {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid var(--gold);
-      color: var(--burgundy);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.81rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      color: var(--champagne);
       text-transform: uppercase;
+      letter-spacing: .18em;
+      font-family: Arial, sans-serif;
+      font-size: .78rem;
+      margin-bottom: 5px;
     }
 
-    .notice {
-      max-width: 800px;
-      margin: 2.4rem auto 0;
-      padding: 1.3rem 1.5rem;
-      border: 1px solid rgba(216, 195, 158, 0.55);
-      border-left: 4px solid var(--gold-light);
-      background: rgba(255, 253, 248, 0.08);
-      color: #f7f2e9;
+    .event h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
-    /* Information */
-
-    #information::before,
-    #information::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      border-radius: 50%;
-      filter: blur(1px);
+    .program-note {
+      font-style: italic;
+      color: rgba(255,255,255,.76);
+      margin-top: 35px;
     }
 
-    #information::before {
-      top: 8rem;
-      left: -11rem;
-      width: 290px;
-      height: 290px;
-      border: 70px solid rgba(116, 63, 66, 0.035);
-    }
+    /* DINNER IMAGE */
 
-    #information::after {
-      right: -10rem;
-      bottom: 8rem;
-      width: 250px;
-      height: 250px;
-      border: 60px solid rgba(47, 68, 58, 0.04);
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.35rem;
-    }
-
-    .detail {
-      position: relative;
-      min-height: 235px;
-      padding: 2.1rem 2rem 1.9rem;
-      border: 1px solid rgba(170, 133, 77, 0.28);
-      border-top: 3px solid var(--gold);
+    .dinner {
+      min-height: 65vh;
       background:
-        linear-gradient(145deg, rgba(255, 253, 248, 0.94), rgba(247, 242, 233, 0.76));
-      box-shadow: var(--shadow-soft);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
+        linear-gradient(
+          90deg,
+          rgba(35,25,18,.16),
+          rgba(35,25,18,.44)
+        ),
+        url("dinner-winter.jpg") center / cover no-repeat;
 
-    .detail:hover {
-      transform: translateY(-3px);
-      border-color: rgba(170, 133, 77, 0.65);
-    }
-
-    .detail::after {
-      content: "";
-      position: absolute;
-      right: 1rem;
-      bottom: 1rem;
-      width: 28px;
-      height: 28px;
-      border-right: 1px solid rgba(170, 133, 77, 0.45);
-      border-bottom: 1px solid rgba(170, 133, 77, 0.45);
-    }
-
-    .detail h3 {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
-      gap: 0.7rem;
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-      color: var(--green);
-      font-size: 1.5rem;
-      font-weight: 400;
+      padding: 50px 8%;
     }
 
-    .detail h3::before {
-      content: "◆";
-      color: var(--gold);
-      font-size: 0.45rem;
+    .dinner-quote {
+      width: min(520px,100%);
+      color: white;
+      text-align: center;
+      text-shadow: 0 2px 13px rgba(0,0,0,.45);
     }
 
-    /* OSA */
+    .dinner-quote p {
+      font-size: clamp(2.4rem,5vw,4.4rem);
+      line-height: 1.15;
+      font-style: italic;
+    }
 
-    #osa {
-      max-width: none;
-      padding-right: max(1.4rem, calc((100% - 1092px) / 2));
-      padding-left: max(1.4rem, calc((100% - 1092px) / 2));
+    .dinner-quote span {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      font-size: .73rem;
+    }
+
+    /* PRACTICAL */
+
+    .practical {
+      padding: 110px 24px;
       background:
-        linear-gradient(rgba(226, 230, 226, 0.82), rgba(244, 239, 229, 0.97)),
-        radial-gradient(circle at 15% 10%, #b4c2ba, transparent 25rem),
-        radial-gradient(circle at 90% 85%, #d7c5b3, transparent 24rem);
+        linear-gradient(
+          135deg,
+          #f7f1e6 0%,
+          #fffdf8 55%,
+          #edf0ea 100%
+        );
     }
 
-    .rsvp-shell {
-      position: relative;
-      max-width: 850px;
+    .practical-inner {
+      max-width: 1050px;
       margin: auto;
-      padding: clamp(2rem, 5vw, 4rem);
-      border: 1px solid rgba(170, 133, 77, 0.7);
-      background:
-        linear-gradient(rgba(255, 253, 248, 0.97), rgba(255, 253, 248, 0.94)),
-        var(--paper);
-      box-shadow: var(--shadow);
     }
 
-    .rsvp-shell::before {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 1px solid rgba(170, 133, 77, 0.22);
-      pointer-events: none;
+    .practical-header {
+      text-align: center;
+      max-width: 650px;
+      margin: auto auto 70px;
     }
 
-    .rsvp-shell::after {
-      content: "❦";
-      position: absolute;
-      top: -24px;
-      left: 50%;
-      width: 54px;
-      height: 47px;
-      transform: translateX(-50%);
+    .information-grid {
       display: grid;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--gold);
-      background: var(--paper);
-      font-size: 1.25rem;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 80px;
     }
 
-    form {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      gap: 1.25rem;
+    .info {
+      padding: 35px 0;
+      border-top: 1px solid rgba(199,165,108,.55);
     }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.1rem;
+    .info h3 {
+      color: var(--burgundy);
+      font-size: 1.7rem;
+      margin-bottom: 15px;
     }
 
-    label,
-    legend {
-      display: block;
-      margin-bottom: 0.45rem;
+    .info strong {
       color: var(--green);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.83rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+    }
+
+    /* RSVP */
+
+    .rsvp {
+      padding: 110px 20px;
+      background:
+        linear-gradient(
+          rgba(23,42,36,.65),
+          rgba(23,42,36,.78)
+        ),
+        url("rsvp-winter.jpg") center / cover no-repeat;
+    }
+
+    .rsvp-container {
+      width: min(720px,100%);
+      margin: auto;
+      background: rgba(250,247,240,.95);
+      padding: clamp(35px,7vw,70px);
+      box-shadow: 0 25px 70px rgba(0,0,0,.26);
+    }
+
+    .rsvp-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .rsvp-header h2 {
+      margin-bottom: 15px;
+    }
+
+    .deadline {
+      color: var(--burgundy);
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    label {
+      display: block;
+      margin-top: 22px;
+      margin-bottom: 7px;
+      color: var(--green);
+      font-family: Arial, sans-serif;
+      font-size: .78rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .09em;
     }
 
     input,
     select,
     textarea {
       width: 100%;
-      min-height: 50px;
-      padding: 0.85rem 0.95rem;
-      border: 1px solid #aeb8b1;
-      border-radius: 0;
+      border: 0;
+      border-bottom: 1px solid #9c988e;
+      background: transparent;
+      padding: 12px 4px;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.86);
-      font: inherit;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    input:hover,
-    select:hover,
-    textarea:hover {
-      border-color: var(--gold);
-      background: white;
-    }
-
-    textarea {
-      min-height: 125px;
-      resize: vertical;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      border-radius: 0;
     }
 
     input:focus,
     select:focus,
-    textarea:focus,
-    button:focus {
-      outline: 3px solid rgba(170, 133, 77, 0.22);
-      outline-offset: 2px;
-      border-color: var(--gold);
-      background: white;
-      box-shadow: 0 5px 18px rgba(47, 68, 58, 0.08);
+    textarea:focus {
+      outline: none;
+      border-color: var(--burgundy);
     }
 
-    fieldset {
-      margin: 0;
-      padding: 1.2rem;
-      border: 1px solid #c6cec8;
-      background: rgba(241, 245, 241, 0.38);
+    textarea {
+      min-height: 100px;
+      resize: vertical;
     }
 
     .radio-group {
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 10px;
     }
 
-    .radio-option {
+    .radio-group label {
+      margin: 0;
+      font-family: Georgia, serif;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: normal;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin: 0;
-      font-weight: 400;
-      cursor: pointer;
+      gap: 8px;
     }
 
-    .radio-option input {
-      width: 18px;
-      min-height: 18px;
-      accent-color: var(--green);
-    }
-
-    .privacy {
-      padding: 1rem;
-      border-left: 2px solid var(--gold);
-      color: var(--muted);
-      background: rgba(170, 133, 77, 0.06);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.76rem;
-      line-height: 1.55;
+    .radio-group input {
+      width: auto;
     }
 
     button {
-      position: relative;
-      min-height: 56px;
-      padding: 0.9rem 1.6rem;
-      overflow: hidden;
-      border: 1px solid var(--green);
-      color: white;
+      display: block;
+      width: 100%;
+      margin-top: 40px;
+      padding: 17px 20px;
+      border: 0;
       background: var(--green);
-      cursor: pointer;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
+      color: white;
       text-transform: uppercase;
-      transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      font-family: Arial, sans-serif;
+      letter-spacing: .16em;
+      cursor: pointer;
+      transition: .25s;
     }
 
     button:hover {
-      color: var(--green);
-      background: transparent;
-      transform: translateY(-2px);
+      background: var(--burgundy);
     }
 
-    button:disabled {
-      cursor: wait;
-      opacity: 0.7;
-      transform: none;
-    }
-
-    .form-status {
-      min-height: 1.5rem;
-      margin: 0;
-      color: var(--green);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    /* Sidfot */
+    /* FOOTER */
 
     footer {
-      position: relative;
-      padding: 5rem 1rem 4.5rem;
-      overflow: hidden;
-      color: #f7f3eb;
-      background:
-        linear-gradient(rgba(33, 52, 44, 0.97), rgba(25, 42, 35, 0.99)),
-        var(--green-dark);
+      background: var(--green-dark);
+      color: rgba(255,255,255,.8);
       text-align: center;
+      padding: 65px 20px;
     }
 
-    footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 300px;
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    footer .names {
+      font-size: 2.2rem;
+      color: var(--champagne);
+      margin-bottom: 8px;
     }
 
-    footer::after {
-      content: "❦";
-      position: absolute;
-      top: 0.7rem;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--gold-light);
-      font-size: 1.35rem;
+    footer .date {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .7rem;
     }
 
-    footer p {
-      position: relative;
-      margin: 0.35rem;
+    footer .heart {
+      color: var(--gold);
+      margin: 25px 0;
+      font-size: 1.4rem;
     }
 
-    .footer-names {
-      color: #e4c99c;
-      font-size: 1.9rem;
-      font-style: italic;
-    }
+    /* MOBILE */
 
-    /* Anpassning för mindre skärmar */
+    @media (max-width: 760px) {
 
-    @media (max-width: 820px) {
-      .cards,
-      .details-grid,
-      .form-row {
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+        font-size: .64rem;
+      }
+
+      .hero {
+        min-height: 82vh;
+      }
+
+      .information-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: 84vh;
-        padding-top: 5rem;
-        padding-bottom: 6rem;
+      .program {
+        background-attachment: scroll;
       }
 
-      .hero-card {
-        padding-top: 4.5rem;
-        padding-bottom: 4.5rem;
-      }
-
-      .botanical {
-        width: 210px;
-        height: 210px;
-        opacity: 0.72;
-      }
-
-      .botanical-top-left {
-        top: -40px;
-        left: -80px;
-      }
-
-      .botanical-top-right {
-        top: -40px;
-        right: -85px;
-      }
-
-      .section {
-        padding-top: 4.5rem;
-        padding-bottom: 4.5rem;
-      }
-
-      .card,
-      .detail {
-        min-height: auto;
-      }
-
-      .nav-inner {
-        gap: 0.75rem 1.15rem;
-      }
-
-      nav a {
-        font-size: 0.68rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        padding-right: 0.8rem;
-        padding-left: 0.8rem;
-      }
-
-      .hero-card {
-        padding-right: 1.1rem;
-        padding-left: 1.1rem;
-      }
-
-      .hero-date {
-        line-height: 1.7;
-      }
-
-      .section {
-        padding-right: 1rem;
-        padding-left: 1rem;
-      }
-
-      .welcome,
-      .card,
-      .detail,
-      .rsvp-shell {
-        padding-right: 1.35rem;
-        padding-left: 1.35rem;
+      .dinner {
+        min-height: 55vh;
+        justify-content: center;
       }
 
       .radio-group {
         flex-direction: column;
-        gap: 0.85rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
+        gap: 12px;
       }
 
-      .snow-layer span {
-        animation: none;
-      }
-
-      .card,
-      .detail,
-      button {
-        transition: none;
+      .intro,
+      .program,
+      .practical,
+      .rsvp {
+        padding-top: 80px;
+        padding-bottom: 80px;
       }
     }
   </style>
 </head>
 
 <body>
-  <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
 
-  <header class="hero">
-    <div class="snow-layer" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <!-- HERO -->
 
-    <div class="botanical botanical-top-left" aria-hidden="true">
-      <span class="branch branch-one"></span>
-      <span class="branch branch-two"></span>
-      <span class="leaf leaf-one"></span>
-      <span class="leaf leaf-two"></span>
-      <span class="leaf leaf-three"></span>
-      <span class="leaf leaf-four"></span>
-      <span class="berry berry-cluster"></span>
-    </div>
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <div class="hero-small">Välkommen till vårt bröllop</div>
 
-    <div class="botanical botanical-top-right" aria-hidden="true">
-      <span class="branch branch-one"></span>
-      <span class="branch branch-two"></span>
-      <span class="leaf leaf-one"></span>
-      <span class="leaf leaf-two"></span>
-      <span class="leaf leaf-three"></span>
-      <span class="leaf leaf-four"></span>
-      <span class="berry berry-cluster"></span>
-    </div>
+      <h1>Johanna &amp; Jonas</h1>
 
-    <div class="hero-card">
-      <p class="eyebrow">Välkommen till vårt bröllop</p>
+      <div class="hero-date">
+        Lördagen den 13 februari 2027
+      </div>
 
-      <h1>
-        Johanna Ansker
-        <span class="ampersand">&amp;</span>
-        Jonas Lundin
-      </h1>
+      <div class="hero-place">
+        Carlshälls Gård
+      </div>
 
-      <p class="hero-date">Lördagen den 13 februari 2027</p>
-      <p class="hero-place">Carlshälls Gård</p>
-
-      <div class="winter-mark" aria-hidden="true">❦</div>
+      <div class="hero-symbol">♡</div>
     </div>
   </header>
 
-  <nav aria-label="Huvudmeny">
-    <div class="nav-inner">
-      <a href="#valkommen">Välkommen</a>
-      <a href="#program">Program</a>
-      <a href="#information">Information</a>
-      <a href="#osa">OSA</a>
-    </div>
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#welcome">Välkommen</a>
+    <a href="#program">Program</a>
+    <a href="#information">Information</a>
+    <a href="#osa">OSA</a>
   </nav>
 
-  <main id="main-content">
-    <section class="section" id="valkommen">
-      <h2 class="section-title">Vi ska gifta oss</h2>
-      <div class="divider"></div>
+  <!-- INTRO -->
 
-      <div class="welcome">
-        <p>
-          Efter sex år tillsammans ser vi fram emot att fira vår kärlek
-          och vårt fortsatta liv tillsammans med familj och vänner.
-        </p>
+  <section class="intro" id="welcome">
+    <div class="intro-inner">
 
-        <p>
-          Bröllopet äger rum på Carlshälls Gård lördagen den
-          13 februari 2027. Vi hoppas på en vacker vinterdag och,
-          om vädret tillåter, en vigsel utomhus.
-        </p>
-      </div>
-    </section>
+      <div class="eyebrow">13 februari 2027</div>
 
-    <section class="section" id="program">
-      <h2 class="section-title">Dagens program</h2>
+      <h2>Vi ska gifta oss</h2>
 
-      <p class="section-intro">
-        Tiderna nedan är inledningsvis preliminära och uppdateras när
-        planeringen är slutligt fastställd.
+      <div class="ornament"></div>
+
+      <p>
+        Efter sex år tillsammans ser vi fram emot att fira vår kärlek
+        och vårt fortsatta liv tillsammans med familj och vänner.
       </p>
 
-      <div class="cards">
-        <article class="card">
-          <span class="time">14.00</span>
+      <p>
+        Bröllopet äger rum på Carlshälls Gård lördagen den
+        13 februari 2027. Vi hoppas på en vacker vinterdag och,
+        om vädret tillåter, en vigsel utomhus.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- PROGRAM -->
+
+  <section class="program" id="program">
+
+    <div class="program-inner">
+
+      <div class="eyebrow">Bröllopsdagen</div>
+
+      <h2>Dagens program</h2>
+
+      <p class="program-intro">
+        Tiderna nedan är inledningsvis preliminära och uppdateras
+        när planeringen är slutligt fastställd.
+      </p>
+
+      <div class="timeline">
+
+        <div class="event">
+          <div class="time">14.00</div>
           <h3>Ankomst</h3>
+
           <p>
             Välkomstservering och samling på Carlshälls Gård.
             Kom gärna i god tid.
           </p>
-        </article>
+        </div>
 
-        <article class="card">
-          <span class="time">15.00</span>
+        <div class="event">
+          <div class="time">15.00</div>
           <h3>Vigsel</h3>
+
           <p>
             Vigseln planeras att hållas utomhus om vädret tillåter.
             Det finns en alternativ plan vid olämpligt väder.
           </p>
-        </article>
+        </div>
 
-        <article class="card">
-          <span class="time">Efter vigseln</span>
+        <div class="event">
+          <div class="time">Efter vigseln</div>
           <h3>Middag och fest</h3>
+
           <p>
-            Efter vigseln följer middag, tal, musik och fortsatt firande.
+            Efter vigseln följer middag, tal, musik och fortsatt
+            firande.
           </p>
-        </article>
+        </div>
+
       </div>
 
-      <div class="notice">
-        Ersätt de preliminära tiderna ovan när det slutliga schemat är bestämt.
-      </div>
-    </section>
-
-    <section class="section" id="information">
-      <h2 class="section-title">Praktisk information</h2>
-      <div class="divider"></div>
-
-      <div class="details-grid">
-        <article class="detail">
-          <h3>Plats</h3>
-          <p>
-            <strong>Carlshälls Gård</strong><br>
-            Långholmen, Stockholm
-          </p>
-          <p>
-            Komplettera gärna med vägbeskrivning, information om transport,
-            parkering och eventuell gemensam buss.
-          </p>
-        </article>
-
-        <article class="detail">
-          <h3>Klädsel</h3>
-          <p>
-            Ange önskad klädkod här, exempelvis mörk kostym.
-          </p>
-          <p>
-            Eftersom vigseln kan hållas utomhus rekommenderar vi varma
-            ytterkläder och skor som passar underlaget.
-          </p>
-        </article>
-
-        <article class="detail">
-          <h3>Mat och dryck</h3>
-          <p>
-            Under kvällen serveras middag med tillhörande dryck.
-          </p>
-          <p>
-            Allergier och behov av specialkost anges i OSA-formuläret.
-            Ange endast information som köket behöver för att kunna
-            förbereda maten.
-          </p>
-        </article>
-
-        <article class="detail">
-          <h3>Barn</h3>
-          <p>
-            Komplettera med er valda formulering, exempelvis om barn är
-            välkomna eller om festen är avsedd för vuxna gäster.
-          </p>
-        </article>
-
-        <article class="detail">
-          <h3>Vigsel</h3>
-          <p>
-            Vår förhoppning är att vigseln ska kunna hållas utomhus.
-            Slutligt beslut fattas utifrån väder och förhållanden på platsen.
-          </p>
-        </article>
-
-        <article class="detail">
-          <h3>Övernattning</h3>
-          <p>
-            Komplettera med rekommenderade hotell, rabattkod och sista datum
-            för eventuell rumsbokning.
-          </p>
-        </article>
-
-        <article class="detail">
-          <h3>Tal och överraskningar</h3>
-          <p>
-            Den som vill hålla tal eller planera ett inslag kan kontakta
-            toastmaster eller toastmadame. Lägg in kontaktuppgifterna här.
-          </p>
-        </article>
-
-        <article class="detail">
-          <h3>Presenter</h3>
-          <p>
-            Komplettera med information om eventuell önskelista eller
-            annan presentönskan.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="osa">
-      <h2 class="section-title">OSA</h2>
-
-      <p class="section-intro">
-        Vänligen svara senast den 6 december 2026. Ett svar per sällskap räcker.
+      <p class="program-note">
+        Ersätt de preliminära tiderna ovan när det slutliga schemat
+        är bestämt.
       </p>
 
-      <div class="rsvp-shell">
-        <form
-          id="rsvp-form"
-          action="https://formspree.io/f/xqppynaw"
-          method="POST"
+    </div>
+  </section>
+
+  <!-- DINNER IMAGE -->
+
+  <section class="dinner">
+
+    <div class="dinner-quote">
+      <p>
+        Samma äventyr,<br>
+        resten av livet.
+      </p>
+
+      <span>Johanna &amp; Jonas</span>
+    </div>
+
+  </section>
+
+  <!-- PRACTICAL INFORMATION -->
+
+  <section class="practical" id="information">
+
+    <div class="practical-inner">
+
+      <div class="practical-header">
+        <div class="eyebrow">Inför dagen</div>
+        <h2>Praktisk information</h2>
+      </div>
+
+      <div class="information-grid">
+
+        <div>
+
+          <article class="info">
+            <h3>Plats</h3>
+
+            <p>
+              <strong>Carlshälls Gård</strong><br>
+              Långholmen, Stockholm
+            </p>
+
+            <p>
+              Komplettera gärna med vägbeskrivning, information om
+              transport, parkering och eventuell gemensam buss.
+            </p>
+          </article>
+
+          <article class="info">
+            <h3>Klädsel</h3>
+
+            <p>
+              Ange önskad klädkod här, exempelvis mörk kostym.
+            </p>
+
+            <p>
+              Eftersom vigseln kan hållas utomhus rekommenderar vi
+              varma ytterkläder och skor som passar underlaget.
+            </p>
+          </article>
+
+          <article class="info">
+            <h3>Mat och dryck</h3>
+
+            <p>
+              Under kvällen serveras middag med tillhörande dryck.
+            </p>
+
+            <p>
+              Allergier och behov av specialkost anges i OSA-formuläret.
+              Ange endast information som köket behöver för att kunna
+              förbereda maten.
+            </p>
+          </article>
+
+        </div>
+
+        <div>
+
+          <article class="info">
+            <h3>Barn</h3>
+
+            <p>
+              Komplettera med information om huruvida barn är välkomna
+              till vigsel och fest.
+            </p>
+          </article>
+
+          <article class="info">
+            <h3>Vigsel</h3>
+
+            <p>
+              Vår förhoppning är att vigseln ska kunna hållas utomhus
+              i vintermiljön vid Carlshälls Gård.
+            </p>
+
+            <p>
+              Om vädret inte tillåter det kommer vigseln att flyttas
+              inomhus.
+            </p>
+          </article>
+
+          <article class="info">
+            <h3>Övrigt</h3>
+
+            <p>
+              Mer information kring dagen läggs upp här när vi närmar
+              oss bröllopet.
+            </p>
+
+            <p>
+              Titta därför gärna in på sidan igen inför den
+              13 februari.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+
+  <section class="rsvp" id="osa">
+
+    <div class="rsvp-container">
+
+      <div class="rsvp-header">
+        <div class="eyebrow">Vi hoppas att ni kan komma</div>
+
+        <h2>OSA</h2>
+
+        <p class="deadline">
+          Svara gärna senast den 6 december 2026.
+        </p>
+      </div>
+
+      <!--
+        VIKTIGT:
+        Byt DIN_FORM_ID mot ID:t du fått från Formspree.
+        Exempel:
+        action="https://formspree.io/f/abcdefgh"
+      -->
+
+      <form action="https://formspree.io/f/xqppynaw" method="POST">
+
+        <label for="name">
+          Namn
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="Namn"
+          required
         >
-          <input
-            type="hidden"
-            name="_subject"
-            value="Ny OSA till Johanna och Jonas bröllop"
-          >
 
-          <div class="form-row">
-            <div>
-              <label for="name">Namn på huvudanmälaren *</label>
-              <input
-                id="name"
-                name="Namn"
-                type="text"
-                autocomplete="name"
-                required
-              >
-            </div>
+        <label>
+          Kommer ni?
+        </label>
 
-            <div>
-              <label for="email">E-postadress *</label>
-              <input
-                id="email"
-                name="E-post"
-                type="email"
-                autocomplete="email"
-                required
-              >
-            </div>
-          </div>
+        <div class="radio-group">
 
-          <fieldset>
-            <legend>Kan sällskapet delta? *</legend>
-
-            <div class="radio-group">
-              <label class="radio-option">
-                <input
-                  type="radio"
-                  name="Deltar"
-                  value="Ja"
-                  required
-                >
-                Ja, vi kommer
-              </label>
-
-              <label class="radio-option">
-                <input
-                  type="radio"
-                  name="Deltar"
-                  value="Nej"
-                  required
-                >
-                Nej, vi kan tyvärr inte komma
-              </label>
-            </div>
-          </fieldset>
-
-          <div class="form-row">
-            <div>
-              <label for="guest-count">Antal personer som kommer *</label>
-              <select id="guest-count" name="Antal personer" required>
-                <option value="">Välj antal</option>
-                <option value="0">0 personer</option>
-                <option value="1">1 person</option>
-                <option value="2">2 personer</option>
-                <option value="3">3 personer</option>
-                <option value="4">4 personer</option>
-                <option value="5">5 personer</option>
-                <option value="6">6 personer</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="phone">Telefonnummer</label>
-              <input
-                id="phone"
-                name="Telefonnummer"
-                type="tel"
-                autocomplete="tel"
-              >
-            </div>
-          </div>
-
-          <div>
-            <label for="guests">Namn på samtliga deltagare</label>
-            <textarea
-              id="guests"
-              name="Deltagarnas namn"
-              placeholder="Exempel: Anna Andersson och Erik Andersson"
-            ></textarea>
-          </div>
-
-          <div>
-            <label for="diet">
-              Allergier eller specialkost
-            </label>
-            <textarea
-              id="diet"
-              name="Specialkost"
-              placeholder="Ange vilken person uppgiften gäller och vad köket behöver känna till."
-            ></textarea>
-          </div>
-
-          <div>
-            <label for="accessibility">
-              Tillgänglighetsbehov eller annan praktisk information
-            </label>
-            <textarea
-              id="accessibility"
-              name="Praktiska behov"
-              placeholder="Ange endast information som är nödvändig för planeringen."
-            ></textarea>
-          </div>
-
-          <div>
-            <label for="message">Meddelande till brudparet</label>
-            <textarea
-              id="message"
-              name="Meddelande"
-              placeholder="Valfritt meddelande"
-            ></textarea>
-          </div>
-
-          <label class="radio-option">
+          <label>
             <input
-              type="checkbox"
-              name="Bekräftelse"
-              value="Godkänd"
+              type="radio"
+              name="Närvaro"
+              value="Ja"
               required
             >
-            Jag bekräftar att uppgifterna får användas för planeringen
-            av bröllopet. *
+            Ja, vi kommer
           </label>
 
-          <p class="privacy">
-            Uppgifterna används endast för planering och genomförande av
-            bröllopet. Uppgifter om specialkost och praktiska behov bör
-            raderas när de inte längre behövs.
-          </p>
+          <label>
+            <input
+              type="radio"
+              name="Närvaro"
+              value="Nej"
+            >
+            Nej, tyvärr
+          </label>
 
-          <button type="submit">Skicka OSA</button>
+        </div>
 
-          <p
-            id="form-status"
-            class="form-status"
-            role="status"
-            aria-live="polite"
-          ></p>
-        </form>
-      </div>
-    </section>
-  </main>
+        <label for="guests">
+          Antal personer
+        </label>
+
+        <select id="guests" name="Antal personer" required>
+          <option value="">Välj antal</option>
+          <option value="1">1 person</option>
+          <option value="2">2 personer</option>
+          <option value="3">3 personer</option>
+          <option value="4">4 personer</option>
+          <option value="5">5 personer</option>
+          <option value="6">6 personer</option>
+        </select>
+
+        <label for="diet">
+          Allergier eller specialkost
+        </label>
+
+        <textarea
+          id="diet"
+          name="Specialkost"
+          placeholder="Ange allergier eller behov av specialkost."
+        ></textarea>
+
+        <label for="message">
+          Meddelande till oss
+        </label>
+
+        <textarea
+          id="message"
+          name="Meddelande"
+          placeholder="Skriv gärna ett meddelande."
+        ></textarea>
+
+        <button type="submit">
+          Skicka OSA
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    <p class="footer-names">Johanna &amp; Jonas</p>
-    <p>13 februari 2027 · Carlshälls Gård</p>
+
+    <div class="names">
+      Johanna &amp; Jonas
+    </div>
+
+    <div class="heart">
+      ♡
+    </div>
+
+    <div class="date">
+      13 februari 2027 · Carlshälls Gård
+    </div>
+
   </footer>
 
-  <script>
-    const form = document.getElementById("rsvp-form");
-    const statusText = document.getElementById("form-status");
-    const submitButton = form.querySelector('button[type="submit"]');
-
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        statusText.textContent =
-          "Kontrollera att alla obligatoriska fält är ifyllda.";
-        return;
-      }
-
-      const endpoint = form.getAttribute("action");
-
-      if (endpoint.includes("ER_FORM_ID")) {
-        statusText.textContent =
-          "Formuläret är ännu inte kopplat till Formspree. Lägg in rätt formuläradress i koden.";
-        return;
-      }
-
-      submitButton.disabled = true;
-      submitButton.textContent = "Skickar...";
-      statusText.textContent = "";
-
-      try {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          body: new FormData(form),
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error("Formuläret kunde inte skickas.");
-        }
-
-        form.reset();
-        statusText.textContent =
-          "Tack. Er anmälan är mottagen och har skickats till Johanna och Jonas.";
-      } catch (error) {
-        statusText.textContent =
-          "Anmälan kunde inte skickas. Försök igen eller kontakta Johanna eller Jonas direkt.";
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = "Skicka OSA";
-      }
-    });
-  </script>
 </body>
 </html>
